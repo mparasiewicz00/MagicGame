@@ -1,9 +1,9 @@
 package pl.kurs.Wizard;
 
 public enum SpellType {
-    HEAL("Leczenie",30.0),
-    FIREBALL("Kula ognia",-25.0),
-    LIGHTING_STRIKE("Rażenie piorunem",-20.0);
+    HEAL("HEAL",30.0),
+    FIREBALL("FIREBALL",-25.0),
+    LIGHTING_STRIKE("LIGHTING STRIKE",-20.0);
 
     private final double healthImpact;
     private final String spellDescription;

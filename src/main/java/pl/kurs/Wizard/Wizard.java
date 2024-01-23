@@ -10,7 +10,7 @@ public class Wizard {
     private long wizardAge;
     private WizardType wizardType;
 
-    public Wizard(String wizardName, double healthLevel, long wizardAge, WizardType wizardType) {
+    public Wizard(String wizardName, long wizardAge, WizardType wizardType) {
         this.wizardName = wizardName;
         this.healthLevel = 200.0;
         this.wizardAge = wizardAge;
@@ -97,21 +97,21 @@ public class Wizard {
         if (healthImpact > 0) {
             targetWizard.healWizard(healthImpact);
         } else if (healthImpact < 0) {
-            targetWizard.takeDamage(healthImpact);
+            targetWizard.takeDamage(-healthImpact);
         }
     }
 
     private void healWizard(double healthImpact) {
-        healthImpact += healthImpact;
-        if (healthLevel > 200.0) {
-            healthLevel = 200.0;
+        setHealthLevel(healthLevel += healthImpact);
+        if (getHealthLevel() > 200.0) {
+            setHealthLevel(200.0);
         }
     }
 
     private void takeDamage(double healthImpact) {
-        healthLevel =- -healthImpact;
-        if (healthLevel < 0.0) {
-            healthLevel = 0.0;
+        setHealthLevel(healthLevel -= healthImpact);
+        if (getHealthLevel() < 0.0) {
+            setHealthLevel(0.0);
         }
     }
 
