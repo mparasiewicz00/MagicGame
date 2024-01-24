@@ -5,13 +5,10 @@ public class MagicGameRunner {
         Wizard wizardAdam = new Wizard("Adam", 20, WizardType.WIZARD_OF_FIRE);
         Wizard wizardGienek = new Wizard("Gienek", 920, WizardType.WIZARD_OF_WIND);
 
-        wizardGienek.throwSpell("FIREBALL", wizardAdam);
-        wizardGienek.throwSpell("LIGHTING STRIKE", wizardAdam);
         wizardAdam.throwSpell("FIREBALL", wizardGienek);
-        System.out.println(wizardAdam);
-        wizardGienek.throwSpell("HEAL", wizardAdam);
-        System.out.println(wizardAdam);
+        wizardAdam.throwSpell("FIREBALL", wizardGienek);
         System.out.println(wizardGienek);
-
+        wizardAdam.throwSpell("HEAL", wizardGienek);
+        System.out.println(wizardGienek);
     }
 }
